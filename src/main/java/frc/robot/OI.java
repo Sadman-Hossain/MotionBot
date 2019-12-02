@@ -9,7 +9,11 @@ package frc.robot;
 
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
+import frc.robot.commands.MoveBackward;
+import frc.robot.commands.MoveForward;
 import frc.robot.commands.TurnInPlace;
+import frc.robot.commands.TurnLeft;
+import frc.robot.commands.TurnRight;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -80,7 +84,13 @@ public class OI {
 
     public OI() {
         XboxController controller = new XboxController(0);
-        JoystickButton b = new JoystickButton(controller, ControllerMap.BUTTON_A);
-        b.whileHeld(new TurnInPlace());
+		JoystickButton button_a = new JoystickButton(controller, ControllerMap.BUTTON_A);
+		JoystickButton button_b = new JoystickButton(controller, ControllerMap.BUTTON_A);
+		JoystickButton button_x = new JoystickButton(controller, ControllerMap.BUTTON_A);
+		JoystickButton button_y = new JoystickButton(controller, ControllerMap.BUTTON_A);
+		button_a.whileHeld(new MoveForward());
+		button_b.whileHeld(new MoveBackward());
+		button_x.whileHeld(new TurnLeft());
+		button_y.whileHeld(new TurnRight());	
     }
 }

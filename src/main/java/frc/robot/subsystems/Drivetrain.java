@@ -25,11 +25,11 @@ public class Drivetrain extends Subsystem {
         RobotMap.lvictor.set(ControlMode.PercentOutput, left);
         RobotMap.rvictor.set(ControlMode.PercentOutput, -right);
 
-        RobotMap.lvictor.setNeutralMode(NeutralMode.Brake);
-        RobotMap.rvictor.setNeutralMode(NeutralMode.Brake);
-        RobotMap.ltalon1.setNeutralMode(NeutralMode.Brake);
-        RobotMap.ltalon2.setNeutralMode(NeutralMode.Brake);
-        RobotMap.rtalon1.setNeutralMode(NeutralMode.Brake);
-        RobotMap.rtalon2.setNeutralMode(NeutralMode.Brake);
+        RobotMap.rvictor.setNeutralMode(NeutralMode.Coast);
+        RobotMap.ltalon1.setNeutralMode(NeutralMode.Coast);
+        RobotMap.ltalon2.setNeutralMode(NeutralMode.Coast);
+        RobotMap.rtalon1.setNeutralMode(NeutralMode.Coast);
+        RobotMap.lvictor.setNeutralMode(NeutralMode.Coast);
+        RobotMap.rtalon2.setNeutralMode(NeutralMode.Coast);
     }
 }
